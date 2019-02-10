@@ -15,61 +15,36 @@ resources.set("Eloquent JavaScript Chapter 6: The Secret Life of Objects", {
   .set("HTML5 Canvas Game: 2D Collision Detection", {
     url: "http://blog.sklambert.com/html5-canvas-game-2d-collision-detection/",
     criteria: "Collision",
-=======
-  .set("HTML5 Canvas Game: 2D Collision Detection", {
-    url: "http://blog.sklambert.com/html5-canvas-game-2d-collision-detection/",
-    criteria: "Error Free - Collision",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Text Tutorial",
     sharer: "jamesperrin-FEND"
   })
   .set("Adding collision detection to images drawn on canvas", {
     url: "https://stackoverflow.com/questions/13916966/adding-collision-detection-to-images-drawn-on-canvas",
-<<<<<<< HEAD
     criteria: "Collision",
-=======
-    criteria: "Error Free - Collision",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: 'Question/Answer',
     sharer: "jamesperrin-FEND"
   })
   .set("CanvasRenderingContext2D.drawImage()", {
     url: "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/drawImage",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Player/Vehicle Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Documentation",
     sharer: "James Theobald"
   })
   .set("Collision detection", {
     url: "https://developer.mozilla.org/en-US/docs/Games/Tutorials/2D_Breakout_game_pure_JavaScript/Collision_detection",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Player/Vehicle Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Text Tutorial",
     sharer: "Tony Boswell [FEND]"
   })
   .set("2D collision detection", {
     url: "https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection",
-<<<<<<< HEAD
     criteria: "Collision",
-=======
-    criteria: "Error Free - Collision",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Text Tutorial",
     sharer: "Ryan B[FEND]"
   })
   .set("Speed and Velocity", {
     url: "https://www.physicsclassroom.com/class/1DKin/Lesson-1/Speed-and-Velocity",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Player/Vehicle Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Text Tutorial",
     sharer: "Iip"
   })
@@ -147,41 +122,25 @@ resources.set("Eloquent JavaScript Chapter 6: The Secret Life of Objects", {
   })
   .set("Interactive Key Codes", {
     url: "http://keycode.info/",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Vehicle/Player Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "App",
     sharer: "JamesDBartlett3"
   })
   .set("KeyboardEvent Value (keyCodes, metaKey, etc)", {
     url: "https://css-tricks.com/snippets/javascript/javascript-keycodes/",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Vehicle/Player Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Article/Blog",
     sharer: "Ivan.ProjectCoach [FEND}"
   })
   .set("Javascript Char Codes (Key Codes)", {
     url: "https://www.cambiaresearch.com/articles/15/javascript-char-codes-key-codes",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Vehicle/Player Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Article/Blog",
     sharer: "Ivan.ProjectCoach [FEND}"
   })
   .set("Key Codes", {
     url: "http://blogs.longwin.com.tw/lifetype/key_codes.html",
-<<<<<<< HEAD
     criteria: "Player/Vehicle Movement",
-=======
-    criteria: "Error Free - Vehicle/Player Movement",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Article/Blog",
     sharer: "Ivan.ProjectCoach [FEND}"
   })
@@ -197,15 +156,6 @@ resources.set("Eloquent JavaScript Chapter 6: The Secret Life of Objects", {
     type: "Video Tutorial",
     sharer: "Camille FEND"
   })
-<<<<<<< HEAD
-=======
-  .set("Modals in Pure ES6 JavaScript", {
-    url: "https://lowrey.me/modals-in-pure-es6-javascript/",
-    criteria: "Error Free - Player Wins",
-    type: "Article/Blog",
-    sharer: "James Theobald"
-  })
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
   .set("JavaScript OOP Crash Course (ES5 & ES6)", {
     url: "https://www.youtube.com/watch?v=vDJpGenyHaA&app=desktop",
     criteria: "Object Oriented Code",
@@ -226,11 +176,7 @@ resources.set("Eloquent JavaScript Chapter 6: The Secret Life of Objects", {
   })
   .set("A collision detection function", {
     url: "https://developer.mozilla.org/en-US/docs/Games/Techniques/2D_collision_detection",
-<<<<<<< HEAD
     criteria: "Collision",
-=======
-    criteria: "Error Free - Collision",
->>>>>>> f909a8a46d1351a31469cc296d31bac66000cfdd
     type: "Text Tutorial",
     sharer: "Tony Boswell [FEND]"
   });
