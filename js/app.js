@@ -11,7 +11,7 @@ const loadPage = () => {
  */
 const mainElement = () => {
   document.querySelector('nav')
-  .insertAdjacentHTML('afterend', `<main class="criterias"></main>`);
+    .insertAdjacentHTML('afterend', `<main class="criterias"></main>`);
 
   criteriaCard();
 }
@@ -40,6 +40,31 @@ function criteriaCard() {
     //populate Rubric criteria dropdown nav
     document.querySelectorAll('span')[1].insertAdjacentHTML('afterbegin',
       `<a class="dropdown-content-link" href="#criteria${criteriaIndex}">${criteria}</a>`)
+    typeCard(criteria, criteriaIndex);
+  })
+}
+
+/**
+ * @description Dynamically create type card using forEach method
+ */
+function typeCard(criteria, criteriaIndex) {
+  // typeSet so that there aren't duplicate entries
+  const typeSet = new Set();
+  resources.forEach(type => typeSet.add(`${type.type}`))
+
+  // create an array so that an index can be established
+  let typeArray = [...typeSet.values()];
+
+  //one card for each type from the array
+  typeArray.forEach((type, typeIndex) => {
+    document.querySelector('h2')
+      .insertAdjacentHTML('afterend',
+        // criteriaIndex followed by typeIndex create a unique id for each type
+        // card which is necessary to remove empty cards
+        `<section class="type" id="${criteriaIndex}${typeIndex}">
+          <h3 class="type-header">${type}</h3>
+          <br/>
+        `);
   })
 }
 
