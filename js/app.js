@@ -65,7 +65,29 @@ function typeCard(criteria, criteriaIndex) {
           <h3 class="type-header">${type}</h3>
           <br/>
         `);
+    resourceCard(criteria, type, criteriaIndex, typeIndex);
   })
+}
+/**
+ * @description Dynamically create resource card using for..of loop
+ * @param {string} type - value from type card for matching to resource card
+ * @param {object} resource - object from Map to fill in type cards with resources
+ */
+function resourceCard(criteria, type, criteriaIndex, typeIndex) {
+  for (const resource of resources) {
+    if (resource[1].type === type && resource[1].criteria === criteria) {
+      document.querySelector('h3')
+        .insertAdjacentHTML('afterend', `
+            <button class="resource">
+              <a class="link" href='${resource[1].url}'>
+                <h4 class="link-header">${resource[0]}</h4>
+                <span class="credit">Shared by: ${resource[1].sharer}</span>
+              </a>
+             </button>
+           </section>
+          `)
+    }
+  }
 }
 
 document.body.onload = loadPage();
