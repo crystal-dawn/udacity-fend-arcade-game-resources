@@ -3,23 +3,16 @@
  * @todo remove unused criterias dynamically
  */
 const criteriasList = [
-  "Game Behavior",
-  // "Memory Game Logic",
-  "Congratulations Popup & Star Rating",
-  "Congratulations Popup",
-  // "Restart Button",
-  // "Star Rating",
-  "Timer",
-  // "Move Counter",
-  // "Interface Design",
-  // "Documentation",
+  "One",
+  "two two",
+  "three three three"
 ];
 
 const types = [
-  "Tutorial",
-  "Documentation",
-  "Blog/Article",
-  "Answer"
+  "a",
+  "b",
+  "c",
+  "d"
 ];
 
 /**
