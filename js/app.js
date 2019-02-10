@@ -88,6 +88,18 @@ function resourceCard(criteria, type, criteriaIndex, typeIndex) {
           `)
     }
   }
+  removeEmpty(criteriaIndex, typeIndex);
+}
+
+/**
+ * @description Remove type cards that don't have children resource cards
+ */
+const removeEmpty = (criteriaIndex, typeIndex) => {
+  let card = document.getElementById(`${criteriaIndex}${typeIndex}`);
+  console.log(card.children.length);
+  if (card.children.length === 2) {
+    card.style.display = "none";
+  }
 }
 
 document.body.onload = loadPage();
