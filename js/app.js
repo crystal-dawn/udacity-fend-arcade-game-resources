@@ -10,7 +10,7 @@ const loadPage = () => {
  * @description add main element for start of criteria cards
  */
 const mainElement = () => {
-  document.querySelector('nav')
+  document.querySelector('header')
     .insertAdjacentHTML('afterend', `<main class="criterias"></main>`);
 
   criteriaCard();
@@ -31,15 +31,20 @@ function criteriaCard() {
 
   //one card for each criteria from the array
   criteriaArray.forEach((criteria, criteriaIndex) => {
-    document.querySelector('nav')
-      .insertAdjacentHTML('afterend',
+    document.querySelector('main')
+      .insertAdjacentHTML('afterbegin',
         `<section class="criteria">
-        <h2 class="criteria-header" id="criteria${criteriaIndex}">${criteria}</h2>
+        <div id="ctn${criteriaIndex}" style="position:relative;">
+          <a id="criteria${criteriaIndex}">&nbsp;</a>
+          <h2 class="criteria-header">${criteria}</h2>
+        </div>
       </section>`);
 
     //populate Rubric criteria dropdown nav
-    document.querySelectorAll('span')[1].insertAdjacentHTML('afterbegin',
-      `<a class="dropdown-content-link" href="#criteria${criteriaIndex}">${criteria}</a>`)
+    document.querySelector('ul').insertAdjacentHTML('afterbegin',
+      `<li class="criteria-list">
+         <a class="dropdown-link" href="#criteria${criteriaIndex}">${criteria}</a>
+      </li>`)
     typeCard(criteria, criteriaIndex);
   })
 }
@@ -57,7 +62,7 @@ function typeCard(criteria, criteriaIndex) {
 
   //one card for each type from the array
   typeArray.forEach((type, typeIndex) => {
-    document.querySelector('h2')
+    document.querySelector('section > div ')
       .insertAdjacentHTML('afterend',
         // criteriaIndex followed by typeIndex create a unique id for each type
         // card which is necessary to remove empty cards
@@ -77,15 +82,15 @@ function resourceCard(criteria, type, criteriaIndex, typeIndex) {
   for (const resource of resources) {
     if (resource[1].type === type && resource[1].criteria === criteria) {
       document.querySelector('h3')
-        .insertAdjacentHTML('afterend', `
-            <button class="resource">
-              <a class="link" href='${resource[1].url}'>
-                <h4 class="link-header">${resource[0]}</h4>
-                <span class="credit">Shared by: ${resource[1].sharer}</span>
-              </a>
-             </button>
-           </section>
-          `)
+      .insertAdjacentHTML('afterend', `
+        <button class="resource" tabindex="-1">
+          <a class="resource-link" href='${resource[1].url}'>
+            ${resource[0]} </br>
+            <span class="credit">Shared by: ${resource[1].sharer}</span>
+          </a>
+         </button>
+       </section>
+      `)
     }
   }
   removeEmpty(criteriaIndex, typeIndex);
