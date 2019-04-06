@@ -1,6 +1,5 @@
 /**
  * @description create main element when page loads
- * @todo Try and do IFFE for page loads
  */
 const loadPage = () => {
   mainElement();
@@ -11,7 +10,7 @@ const loadPage = () => {
  */
 const mainElement = () => {
   document.querySelector('header')
-    .insertAdjacentHTML('afterend', `<main class="criterias"></main>`);
+    .insertAdjacentHTML('afterend', `<main class="criterias" id="criterias"></main>`);
 
   criteriaCard();
 }
@@ -26,19 +25,17 @@ function criteriaCard() {
   let criteriaSet = new Set();
   resources.forEach(criteria => criteriaSet.add(criteria.criteria));
 
-  // create an array so that an index can be established.
-  let criteriaArray = [...criteriaSet.values()];
+  const entries = criteriaSet.entries();
 
   //one card for each criteria from the array
-  criteriaArray.forEach((criteria, criteriaIndex) => {
-    document.querySelector('main')
-      .insertAdjacentHTML('afterbegin',
-        `<section class="criteria">
-        <div id="ctn${criteriaIndex}" style="position:relative;">
-          <a id="criteria${criteriaIndex}">&nbsp;</a>
-          <h2 class="criteria-header">${criteria}</h2>
-        </div>
-      </section>`);
+  for (const [criteriaIndex, criteria] of entries) {
+    document.querySelector('main').insertAdjacentHTML('afterbegin',
+      `<section class="criteria">
+          <div id="ctn${criteriaIndex}" style="position:relative;">
+            <a id="criteria${criteriaIndex}">&nbsp;</a>
+            <h2 class="criteria-header">${criteria}</h2>
+          </div>
+        </section>`);
 
     //populate Rubric criteria dropdown nav
     document.querySelector('ul').insertAdjacentHTML('afterbegin',
@@ -46,7 +43,7 @@ function criteriaCard() {
          <a class="dropdown-link" href="#criteria${criteriaIndex}">${criteria}</a>
       </li>`)
     typeCard(criteria, criteriaIndex);
-  })
+  }
 }
 
 /**
@@ -57,11 +54,9 @@ function typeCard(criteria, criteriaIndex) {
   const typeSet = new Set();
   resources.forEach(type => typeSet.add(`${type.type}`))
 
-  // create an array so that an index can be established
-  let typeArray = [...typeSet.values()];
+  const entries = typeSet.entries();
 
-  //one card for each type from the array
-  typeArray.forEach((type, typeIndex) => {
+  for (const [typeIndex, type] of entries) {
     document.querySelector('section > div ')
       .insertAdjacentHTML('afterend',
         // criteriaIndex followed by typeIndex create a unique id for each type
@@ -70,8 +65,9 @@ function typeCard(criteria, criteriaIndex) {
           <h3 class="type-header">${type}</h3>
           <br/>
         `);
+
     resourceCard(criteria, type, criteriaIndex, typeIndex);
-  })
+  }
 }
 /**
  * @description Dynamically create resource card using for..of loop
@@ -82,7 +78,7 @@ function resourceCard(criteria, type, criteriaIndex, typeIndex) {
   for (const resource of resources) {
     if (resource[1].type === type && resource[1].criteria === criteria) {
       document.querySelector('h3')
-      .insertAdjacentHTML('afterend', `
+        .insertAdjacentHTML('afterend', `
         <button class="resource" tabindex="-1">
           <a class="resource-link" href='${resource[1].url}'>
             ${resource[0]} </br>
@@ -101,7 +97,6 @@ function resourceCard(criteria, type, criteriaIndex, typeIndex) {
  */
 const removeEmpty = (criteriaIndex, typeIndex) => {
   let card = document.getElementById(`${criteriaIndex}${typeIndex}`);
-  console.log(card.children.length);
   if (card.children.length === 2) {
     card.style.display = "none";
   }
